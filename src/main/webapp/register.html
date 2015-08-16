@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="registrationApp" xmlns="http://www.w3.org/1999/html">
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/app.css">
+    <script src="angular/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
+    <title>Registration</title>
+</head>
+<body>
+<div ng-controller="registrationFormController">
+
+    <form>
+        <div align="center">
+            Username: <input type="username" ng-model="registerUser.username" />
+            Password: <input type="password" ng-model="registerUser.password" />
+            <input type="submit" value="Register" ng-click="submit(registerUser)"/>
+        </div>
+    </form>
+    <p> 1 + 2 = {{ a + b }}</p>
+</div>
+</body>
+</html>

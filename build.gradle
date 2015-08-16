@@ -1,0 +1,31 @@
+apply plugin: 'java'
+apply plugin: 'war'
+
+apply plugin: 'groovy'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile 'org.springframework:spring-webmvc:4.2.0.RELEASE'
+    compile 'javax.servlet:javax.servlet-api:3.0.1'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.3.1'
+    compile 'com.google.guava:guava:18.0'
+    compile 'commons-io:commons-io:2.4'
+    compile 'org.apache.commons:commons-lang3:3.1'
+
+    testCompile 'org.codehaus.groovy:groovy-all:2.4.1'
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.spockframework:spock-core:1.0-groovy-2.4'
+    testCompile 'org.springframework:spring-test:4.2.0.RELEASE'
+    testCompile 'net.sourceforge.htmlunit:htmlunit:2.18'
+    testCompile 'org.json:json:20141113'
+    testCompile 'com.jayway.jsonpath:json-path:2.0.0'
+    testCompile 'cglib:cglib-nodep:3.1'
+
+}
