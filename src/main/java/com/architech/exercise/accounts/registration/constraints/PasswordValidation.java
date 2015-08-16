@@ -10,7 +10,7 @@ class PasswordValidation implements Validation {
     public static final String PASSWORD_CONSTRAINT = "Password must have at least 8 characters, 1 number, 1 uppercase character and 1 lowercase character";
 
     private static final String FIELD_NAME = "password";
-    private static final Pattern PASSWORD_PATTERN = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d!#$%&? \"]{8,}$");
+    private static final Pattern PASSWORD_PATTERN = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d\\W]{8,}$");
 
     private final String password;
 

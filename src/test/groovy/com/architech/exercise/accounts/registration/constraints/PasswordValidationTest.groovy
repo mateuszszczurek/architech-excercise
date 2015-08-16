@@ -29,7 +29,7 @@ class PasswordValidationTest extends Specification {
     }
 
     @Unroll
-    def "correct password must contain 8 alpha-numeric values, 1 number, 1 uppercase and 1 lowercase"(password) {
+    def "[#password] correct password must contain 8 alpha-numeric values, 1 number, 1 uppercase and 1 lowercase"(password) {
         given:
         def validation = passwordValidation(password)
 
@@ -40,7 +40,7 @@ class PasswordValidationTest extends Specification {
         result.containsErrors() == false
 
         where:
-        password << ["longAndHasDigit1", "twoDigits12", "oneUppercase1", "acceptsSpecialSigns1#?"]
+        password << ["longAndHasDigit1", "twoDigits12", "oneUppercase1", "acceptsSpecialSigns1#?", "someMore3xotic!@#)*(%^Ě,ľ"]
     }
 
 }
