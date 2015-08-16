@@ -2,22 +2,72 @@
 <html ng-app="registrationApp" xmlns="http://www.w3.org/1999/html">
 <head lang="en">
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrap-theme.css"/>
     <script src="angular/angular.min.js"></script>
+    <script src="js/bootstrap.js"></script>
     <script src="js/controllers.js"></script>
-    <title>Registration</title>
+    <title>User Registration</title>
 </head>
 <body>
-<div ng-controller="registrationFormController">
+<div class="container" ng-controller="registrationFormController">
+    <form class="form-horizontal">
+        <fieldset>
 
-    <form>
-        <div align="center">
-            Username: <input type="username" ng-model="registerUser.username" />
-            Password: <input type="password" ng-model="registerUser.password" />
-            <input type="submit" value="Register" ng-click="submit(registerUser)"/>
-        </div>
+            <!-- Form Name -->
+            <legend>Simple Registration</legend>
+
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="Username">Username</label>
+
+                <div class="col-md-4">
+                    <input id="Username" name="Username" type="text" placeholder="..." class="form-control input-md"
+                           required=""
+                           ng-model="registerUser.username">
+                    <span class='help-block' ng-repeat="message in usernameErrors" ng-show="usernameErrors.length">{{message}}</span>
+                </div>
+            </div>
+
+            <!-- Password input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="Password">Password:</label>
+
+                <div class="col-md-4">
+                    <input id="Password" name="Password" type="password" placeholder="..." class="form-control input-md"
+                           required=""
+                           ng-model="registerUser.password">
+                    <span class='help-block' ng-repeat="message in passwordErrors" ng-show="passwordErrors.length">{{message}}}</span>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="Register">Register</label>
+
+                <div class="col-md-4">
+                    <button id="Register" name="Register" class="btn btn-primary" ng-click="submit(registerUser)">
+                        Register
+                    </button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <div ng-show="successfullyRegistered" class="alert alert-success">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Successfully</strong> registered account
+                    </div>
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
+
+        </fieldset>
+
     </form>
-    <p> 1 + 2 = {{ a + b }}</p>
+
 </div>
+
 </body>
 </html>

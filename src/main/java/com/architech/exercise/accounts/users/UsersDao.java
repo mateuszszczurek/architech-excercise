@@ -1,4 +1,4 @@
-package com.architech.exercise.accounts.registration;
+package com.architech.exercise.accounts.users;
 
 import java.util.Optional;
 

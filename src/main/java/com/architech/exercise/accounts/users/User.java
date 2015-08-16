@@ -1,4 +1,4 @@
-package com.architech.exercise.accounts.registration;
+package com.architech.exercise.accounts.users;
 
 import static org.apache.commons.lang3.builder.EqualsBuilder.reflectionEquals;
 import static org.apache.commons.lang3.builder.HashCodeBuilder.reflectionHashCode;

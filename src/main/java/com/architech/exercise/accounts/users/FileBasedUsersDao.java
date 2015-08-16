@@ -1,4 +1,4 @@
-package com.architech.exercise.accounts.registration;
+package com.architech.exercise.accounts.users;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -43,8 +43,7 @@ public class FileBasedUsersDao implements UsersDao {
             prepareDirectories();
             try (BufferedWriter writer = newBufferedWriter(pathToUsersFile, APPEND, CREATE)) {
                 writer.write(format("%s,%s", user.getUsername(), user.getPassword()));
-                writer.flush();
-                writer.close();
+                writer.newLine();
             }
         } catch (IOException e) {
             throw new RuntimeException("Got IO Exception. Something is wrong...", e);

@@ -13,7 +13,7 @@ public class FileBasedDaoConfig {
 
     @Bean
     public Path pathToUsersFile(ServletContext servletContext) {
-        return get(servletContext.getRealPath("/persistance/users.txt"));
+        return get(servletContext.getRealPath("WEB-INF/persistance/users.txt"));
     }
 
 

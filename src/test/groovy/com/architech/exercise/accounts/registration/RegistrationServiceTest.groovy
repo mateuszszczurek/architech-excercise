@@ -1,5 +1,8 @@
 package com.architech.exercise.accounts.registration
 
+import com.architech.exercise.accounts.users.User
+import com.architech.exercise.accounts.users.UsernameAlreadyExistsException
+import com.architech.exercise.accounts.users.UsersDao
 import spock.lang.Specification
 
 import static java.util.Optional.empty

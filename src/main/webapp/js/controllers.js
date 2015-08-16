@@ -1,31 +1,35 @@
 var registrationApp = angular.module('registrationApp', []);
 
-registrationApp.factory('Registration', ['$http', function ($http) {
+registrationApp.controller('registrationFormController', ['$scope', '$http',
+    function ($scope, $http) {
 
-        var registerUser = function ($userRegistration) {
+        $scope.usernameErrors = ["asdsaad", "asdasdas"]
+
+        $scope.clear = function() {
+            $scope.usernameErrors = []
+            $scope.passwordErrors = []
+            $scope.successfullyRegistered = false
+        }
+
+        $scope.successfullyRegistered = true
+
+        $scope.submit = function (registerUser) {
+
+            $scope.clear()
+
             $http({
                 url: 'accounts/register',
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                data: $userRegistration
-            })
+                data: registerUser
+            }).success(function(data, status, headers, config) {
+                $scope.successfullyRegistered = true
+            }).error(function(data, status, headers, config) {
+                $scope.usernameErrors = data.usernameErrors
+                $scope.passwordErrors = data.passwordErrors
+            });
+
         }
-        return {register : registerUser}
-    }]
-)
-
-
-
-registrationApp.controller('registrationFormController', ['$scope', 'Registration',
-    function ($scope, Registration) {
-
-        $scope.a = 1
-        $scope.b = 2
-
-        $scope.submit = function (registerUser) {
-            Registration.register(registerUser)
-        }
-
 
 
     }]);

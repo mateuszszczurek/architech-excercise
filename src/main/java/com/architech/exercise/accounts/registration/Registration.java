@@ -2,6 +2,7 @@ package com.architech.exercise.accounts.registration;
 
 import com.architech.exercise.accounts.registration.constraints.RegisterAccountRequestValidator;
 import com.architech.exercise.accounts.registration.constraints.ValidationErrors;
+import com.architech.exercise.accounts.users.UsernameAlreadyExistsException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
