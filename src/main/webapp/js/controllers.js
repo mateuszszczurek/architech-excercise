@@ -3,15 +3,11 @@ var registrationApp = angular.module('registrationApp', []);
 registrationApp.controller('registrationFormController', ['$scope', '$http',
     function ($scope, $http) {
 
-        $scope.usernameErrors = ["asdsaad", "asdasdas"]
-
         $scope.clear = function() {
             $scope.usernameErrors = []
             $scope.passwordErrors = []
             $scope.successfullyRegistered = false
         }
-
-        $scope.successfullyRegistered = true
 
         $scope.submit = function (registerUser) {
 

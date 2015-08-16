@@ -10,7 +10,7 @@
     <title>User Registration</title>
 </head>
 <body>
-<div class="container" ng-controller="registrationFormController">
+<div ng-cloak class="container" ng-controller="registrationFormController">
     <form class="form-horizontal">
         <fieldset>
 
@@ -37,7 +37,7 @@
                     <input id="Password" name="Password" type="password" placeholder="..." class="form-control input-md"
                            required=""
                            ng-model="registerUser.password">
-                    <span class='help-block' ng-repeat="message in passwordErrors" ng-show="passwordErrors.length">{{message}}}</span>
+                    <span class='help-block' ng-repeat="message in passwordErrors" ng-show="passwordErrors.length">{{message}}</span>
                 </div>
             </div>
 
