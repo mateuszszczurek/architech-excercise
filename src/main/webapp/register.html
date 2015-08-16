@@ -23,7 +23,6 @@
 
                 <div class="col-md-4">
                     <input id="Username" name="Username" type="text" placeholder="..." class="form-control input-md"
-                           required=""
                            ng-model="registerUser.username">
                     <span class='help-block' ng-repeat="message in usernameErrors" ng-show="usernameErrors.length">{{message}}</span>
                 </div>
@@ -35,7 +34,6 @@
 
                 <div class="col-md-4">
                     <input id="Password" name="Password" type="password" placeholder="..." class="form-control input-md"
-                           required=""
                            ng-model="registerUser.password">
                     <span class='help-block' ng-repeat="message in passwordErrors" ng-show="passwordErrors.length">{{message}}</span>
                 </div>

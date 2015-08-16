@@ -7,7 +7,7 @@ import static org.springframework.util.StringUtils.isEmpty;
 public class UsernameValidation implements Validation {
 
     public static final String USERNAME_EMPTY = "Username cannot be empty";
-    public static final String USERNAME_LENGTH = "Username length should be more than 5 characters";
+    public static final String USERNAME_LENGTH = "Username should  have at least 5 characters";
     public static final String USERNAME_CONSTRAINTS = "Username should contain only A-Z letters and 0-9 digits";
 
     private static final String USERNAME_FIELD = "username";

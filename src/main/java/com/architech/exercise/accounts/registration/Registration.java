@@ -38,7 +38,7 @@ public class Registration {
             registrationService.register(registerAccountRequest);
             return new ResponseEntity<>(HttpStatus.OK);
         } catch (UsernameAlreadyExistsException e) {
-            validationErrors.validationErrorFor("username", "User already registered");
+            validationErrors.validationErrorFor("username", "Username is already registered");
             return new ResponseEntity(new RegisterAccountValidationErrors(validationErrors), HttpStatus.CONFLICT);
         }
 
